@@ -1,0 +1,29 @@
+{
+ "app": "equipment_logbook",
+ "creation": "2026-07-11 14:37:26.177721",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "header_icon": "book-text",
+ "idx": 0,
+ "items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "home",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Home",
+   "link_to": "Equipment Logbook",
+   "link_type": "Workspace",
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-07-13 02:29:35.486364",
+ "modified_by": "Administrator",
+ "module": "Equipment Logbook",
+ "name": "Equipment Logbook",
+ "owner": "Administrator",
+ "standard": 1,
+ "title": "Equipment Logbook"
+}
