@@ -22,7 +22,7 @@ add_to_apps_screen = [{
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = "/assets/equipment_logbook/js/system_logbook.css"
+# app_include_css = "/assets/equipment_logbook/js/system_logbook.css"
 # app_include_js = "/assets/equipment_logbook/js/equipment_logbook.js"
 
 # include js, css files in header of web template
@@ -37,11 +37,16 @@ app_include_css = "/assets/equipment_logbook/js/system_logbook.css"
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
 # include js in page
-page_js = {
-    "equipment-dashboard": "public/js/equipment_dashboard.js",
-    "system-logbook": "public/js/system_logbook.js",
-}
-
+# page_js = {
+#     "equipment-dashboard": "public/js/equipment_dashboard.js",
+#     "system-logbook": "public/js/system_logbook.js",
+# }
+website_route_rules = [
+    {
+        "from_route": "/equipment/<path:app_path>",
+        "to_route": "equipment",
+    },
+]
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
