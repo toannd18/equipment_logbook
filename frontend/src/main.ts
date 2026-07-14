@@ -3,8 +3,9 @@ import router from './router'
 import App from './App.vue'
 import './index.css'
 
-import { FrappeUI, setConfig, frappeRequest, resourcesPlugin } from 'frappe-ui'
+import { FrappeUI, setConfig, frappeRequest, initSocket } from 'frappe-ui'
 
+initSocket();
 let app = createApp(App)
 
 // Register FrappeUI plugin (all components + directives)
