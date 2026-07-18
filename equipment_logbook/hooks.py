@@ -139,10 +139,28 @@ website_route_rules = [
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
+# Fixtures — synced automatically on migrate
+# ---------------------------------------------------------------
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": [
+            ["name", "in", [
+                "Asset-custom_system_info",
+                "Asset-custom_system_position",
+                "HD Ticket-custom_system_info",
+                "HD Ticket-custom_system_position",
+                "Asset Movement Item-custom_target_system",
+                "Asset Movement Item-custom_target_position",
+            ]]
+        ],
+    },
+]
+
 # Installation
 # ------------
 
-after_install = "equipment_logbook.setup.after_install"
+# after_install = "equipment_logbook.setup.after_install"
 
 # Document Events
 # ---------------

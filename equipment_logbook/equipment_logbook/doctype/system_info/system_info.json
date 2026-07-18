@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:system_code",
+ "creation": "2026-07-04 04:01:27.352887",
+ "custom": 0,
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sec_general_section",
+  "system_code",
+  "system_name",
+  "status",
+  "column_break_wief",
+  "criticality",
+  "location",
+  "department",
+  "sec_desc",
+  "description",
+  "tab_positions",
+  "sec_positions",
+  "positions"
+ ],
+ "fields": [
+  {
+   "fieldname": "sec_general_section",
+   "fieldtype": "Section Break",
+   "label": "Th\u00f4ng tin chung"
+  },
+  {
+   "fieldname": "system_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "M\u00e3 h\u1ec7 th\u1ed1ng",
+   "length": 40,
+   "not_nullable": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "system_name",
+   "fieldtype": "Data",
+   "label": "T\u00ean h\u1ec7 th\u1ed1ng",
+   "length": 100,
+   "reqd": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Tr\u1ea1ng th\u00e1i ho\u1ea1t \u0111\u1ed9ng",
+   "options": "Active\nMaintenance\nOffline\nDecommissioned"
+  },
+  {
+   "fieldname": "column_break_wief",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "criticality",
+   "fieldtype": "Select",
+   "label": "Ph\u00e2n c\u1ea5p quan tr\u1ecdng",
+   "options": "Tier 1 - Mission Critical\nTier 2 - Essential Infrastructure\nTier 3 - Support / Administrative"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "V\u1ecb tr\u00ed",
+   "options": "Location"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "\u0110\u01a1n v\u1ecb qu\u1ea3n l\u00fd",
+   "options": "Department"
+  },
+  {
+   "fieldname": "sec_desc",
+   "fieldtype": "Section Break",
+   "label": "M\u00f4 t\u1ea3 & Ki\u1ebfn tr\u00fac"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "M\u00f4 t\u1ea3 k\u1ef9 thu\u1eadt"
+  },
+  {
+   "fieldname": "tab_positions",
+   "fieldtype": "Tab Break",
+   "label": "Danh s\u00e1ch V\u1ecb tr\u00ed / Node ch\u1ee9c n\u0103ng"
+  },
+  {
+   "fieldname": "sec_positions",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "positions",
+   "fieldtype": "Table",
+   "options": "System Position"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-13 12:23:42.255268",
+ "modified_by": "Administrator",
+ "module": "Equipment Logbook",
+ "name": "System Info",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "system_name",
+ "track_changes": 1
+}
