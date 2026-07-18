@@ -8,21 +8,24 @@
         class="flex h-9 w-9 items-center justify-center rounded-md text-gray-600 hover:bg-gray-100"
         @click="toggleMobileMenu"
       >
-        <BaseIcon name="menu" :size="20" />
+        <Menu class="h-5 w-5" />
       </button>
       <span class="text-sm font-bold text-gray-900">Equipment Logbook</span>
+      <!-- Spacer để cân bằng layout -->
       <div class="h-9 w-9"></div>
     </header>
 
-    <!-- Sidebar -->
-    <Sidebar ref="sidebarRef" />
+    <!-- Sidebar (AppSidebar) -->
+    <AppSidebar :navItems="navItems" />
 
-    <!-- Mobile overlay -->
-    <div
-      v-if="mobileMenuOpen"
-      class="fixed inset-0 z-30 bg-black/50 md:hidden"
-      @click="closeMobileMenu"
-    ></div>
+    <!-- Mobile overlay (click outside to close) -->
+    <Transition name="fade">
+      <div
+        v-if="mobileMenuOpen"
+        class="fixed inset-0 z-30 bg-black/50 md:hidden"
+        @click="closeMobileMenu"
+      ></div>
+    </Transition>
 
     <!-- Main Content -->
     <main class="flex-1 overflow-y-auto bg-gray-50 pt-14 md:pt-0">
@@ -32,16 +35,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import BaseIcon from '@/components/BaseIcon.vue'
-import Sidebar from '@/components/Sidebar.vue'
+import { Menu, BarChart3, Database, HelpCircle } from '@lucide/vue'
+import AppSidebar from '@/components/AppSidebar.vue'
 import { useSidebar } from '@/composables/useSidebar'
 
-const {
-  mobileMenuOpen,
-  toggleMobileMenu,
-  closeMobileMenu,
-} = useSidebar()
+const { mobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useSidebar()
 
-const sidebarRef = ref(null)
+/** Sidebar navigation items — icon là Vue component từ @lucide/vue */
+const navItems = [
+  { label: 'Bảng Điều Khiển', icon: BarChart3, to: '/' },
+  { label: 'Sổ Lý Lịch Hệ Thống', icon: Database, to: '/logbook' },
+  { label: 'Quản Lý Ticket', icon: HelpCircle, to: '/tickets' },
+]
 </script>
