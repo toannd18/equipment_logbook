@@ -13,16 +13,14 @@
   </head>
   <body class="h-full">
     <div id="app" class="h-full"></div>
-    
-  
-          <script>
-              {% for key in boot %}
-              window["{{ key }}"] = {{ boot[key] | tojson }};
-              {% endfor %}
-              {% if frappe.session.user != 'Guest' %}
-              window.csrf_token = "{{ frappe.session.csrf_token }}";
-              {% endif %}
-          </script>
-          </body>
-          
+    <!-- csrf_token -->
+    <script>
+        window.csrf_token = "{{ csrf_token or '' }}";
+    </script>
+    <script>
+        {% for key in boot %}
+        window["{{ key }}"] = {{ boot[key] | tojson }};
+        {% endfor %}
+    </script>
+  </body>
 </html>
