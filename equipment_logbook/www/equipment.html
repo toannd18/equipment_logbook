@@ -19,6 +19,9 @@
               {% for key in boot %}
               window["{{ key }}"] = {{ boot[key] | tojson }};
               {% endfor %}
+              {% if frappe.session.user != 'Guest' %}
+              window.csrf_token = "{{ frappe.session.csrf_token }}";
+              {% endif %}
           </script>
           </body>
           
